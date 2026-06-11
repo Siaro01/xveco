@@ -1,143 +1,288 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>xveco</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dev Portfolio</title>
 
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: #0f0f0f;
-      color: white;
-      text-align: center;
+      font-family: "Courier New", monospace;
+      background: #0a0a0a;
+      color: #00ff99;
+      transition: 0.3s;
     }
 
-    .container {
-      padding: 60px 20px;
+    header {
+      display: flex;
+      justify-content: space-between;
+      padding: 20px;
+      border-bottom: 1px solid #00ff99;
+      align-items: center;
     }
 
-    .logo {
-      font-size: 80px;
-      margin-bottom: 10px;
+    header h1 {
+      margin: 0;
+      font-size: 20px;
     }
 
-    h1 {
-      font-size: 40px;
-      margin: 10px 0;
-    }
-
-    p {
-      max-width: 600px;
-      margin: 20px auto;
-      font-size: 18px;
-      color: #cccccc;
-    }
-
-    a {
-      display: inline-block;
-      margin: 10px;
-      padding: 12px 20px;
-      background: #1f6feb;
-      color: white;
+    nav a {
+      color: #00ff99;
       text-decoration: none;
-      border-radius: 8px;
+      margin-left: 15px;
     }
 
-    a:hover {
-      background: #388bfd;
+    nav a:hover {
+      color: white;
     }
 
-    .install-box {
-      margin-top: 30px;
+    button {
+      background: #00ff99;
+      color: black;
+      border: none;
+      padding: 8px 12px;
+      cursor: pointer;
+      font-weight: bold;
     }
 
-    .install-text {
-      color: #aaaaaa;
+    .hero {
+      text-align: center;
+      padding: 80px 20px;
+    }
+
+    .hero h2 {
+      font-size: 40px;
       margin-bottom: 10px;
     }
 
-    .code {
-      background: #1a1a1a;
-      padding: 12px 16px;
+    .typing {
+      color: white;
+      font-size: 18px;
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    h3 {
+      border-left: 3px solid #00ff99;
+      padding-left: 10px;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 15px;
+    }
+
+    .card {
+      display: block;
+      text-decoration: none;
+      color: #00ff99;
+      background: #111;
+      border: 1px solid #00ff99;
+      padding: 15px;
       border-radius: 8px;
-      display: inline-block;
-      font-size: 16px;
+      transition: 0.3s;
       cursor: pointer;
-      user-select: none;
     }
 
-    .code:hover {
-      background: #2a2a2a;
+    .card:hover {
+      transform: scale(1.03);
     }
 
-    #msg {
-      color: #666;
+    input, textarea {
+      width: 100%;
+      margin: 10px 0;
+      padding: 10px;
+      background: black;
+      border: 1px solid #00ff99;
+      color: white;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      border-top: 1px solid #00ff99;
+      margin-top: 40px;
       font-size: 12px;
-      margin-top: 8px;
-      height: 14px;
+    }
+
+    .cursor {
+      display: inline-block;
+      background: #00ff99;
+      width: 8px;
+      animation: blink 0.8s infinite;
+    }
+
+    @keyframes blink {
+      50% { opacity: 0; }
+    }
+
+    /* 🌙 MODO CLARO */
+    .light {
+      background: #f5f5f5;
+      color: #111;
+    }
+
+    .light header {
+      border-bottom: 1px solid #111;
+    }
+
+    .light nav a {
+      color: #111;
+    }
+
+    .light .card {
+      background: white;
+      border: 1px solid #111;
+      color: #111;
+    }
+
+    .light .typing {
+      color: #111;
+    }
+
+    .light input,
+    .light textarea {
+      background: white;
+      color: black;
+      border: 1px solid #111;
     }
   </style>
 </head>
 
 <body>
 
-  <div class="container">
+<header>
+  <h1>Dev: Siaro</h1>
 
-    <!-- LOGO -->
-    <div class="logo">🪙</div>
+  <nav>
+    <a href="#sobre">Sobre mí</a>
+    <a href="#proyectos">Proyectos</a>
+    <a href="#contacto">Contacto</a>
 
-    <!-- TITULO -->
-    <h1>xveco</h1>
+    <button onclick="toggleTheme()" id="themeBtn">🌙 Modo claro</button>
+  </nav>
+</header>
 
-    <!-- DESCRIPCIÓN -->
-    <p>
-      Librería de economía simulada en Python.
-      Permite crear monedas, cuentas, transferencias,
-      inflación y sistemas bancarios simples.
-    </p>
+<section class="hero">
+  <h2>Hola, soy desarrollador</h2>
+  <div class="typing" id="typing"></div><span class="cursor"></span>
+</section>
 
-    <p>
-      Ideal para juegos, simulaciones y aprendizaje de economía básica.
-    </p>
+<section id="sobre">
+  <h3>Sobre mí</h3>
+  <p>Soy programador especializado en Apps y librerías en Python.</p>
+</section>
 
-    <!-- LINKS -->
-    <a href="https://github.com/santiagoandrespaco131-svg/xveco" target="_blank">
-      GitHub
+<section id="proyectos">
+  <h3>Proyectos</h3>
+
+  <div class="projects">
+
+    <a class="card" href="https://pypi.org/project/xveco/" target="_blank">
+      ⚙️ Python Lib<br><br>
+      Ver en PyPI
     </a>
 
-    <a href="https://pypi.org/project/xveco/" target="_blank">
-      PyPI
+    <a class="card" href="https://github.com/Siaro0?tab=repositories" target="_blank">
+      📊 GitHub<br><br>
+      Ver repositorios
     </a>
-
-    <!-- INSTALL -->
-    <div class="install-box">
-
-      <p class="install-text">Instala la librería:</p>
-
-      <div class="code" onclick="copyInstall()">
-        pip install xveco
-      </div>
-
-      <p id="msg"></p>
-
-    </div>
 
   </div>
+</section>
 
-  <script>
-    function copyInstall() {
-      const text = "pip install xveco";
+<section id="contacto">
+  <h3>Contacto</h3>
 
-      navigator.clipboard.writeText(text).then(() => {
-        document.getElementById("msg").innerText = "Copiado al portapapeles";
+  <input type="email" id="email" placeholder="Tu email">
+  <textarea id="msg" placeholder="Tu mensaje"></textarea>
 
-        setTimeout(() => {
-          document.getElementById("msg").innerText = "";
-        }, 1500);
-      });
+  <button onclick="send()">Enviar</button>
+</section>
+
+<footer>
+  © 2026 - Portfolio de desarrollador
+</footer>
+
+<script>
+  const text = "Python • Apps • Juegos";
+  let i = 0;
+
+  function typingEffect() {
+    if (i < text.length) {
+      document.getElementById("typing").innerHTML += text.charAt(i);
+      i++;
+      setTimeout(typingEffect, 80);
     }
-  </script>
+  }
+
+  typingEffect();
+
+  // FORM
+  function send() {
+    let email = document.getElementById("email").value;
+    let msg = document.getElementById("msg").value;
+
+    if (!email || !msg) {
+      alert("Rellena todos los campos");
+      return;
+    }
+
+    fetch("https://formspree.io/f/xdavlqyy", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+      },
+      body: JSON.stringify({
+        email: email,
+        message: msg
+      })
+    })
+    .then(res => {
+      if (res.ok) {
+        alert("Mensaje enviado correctamente 🚀");
+        document.getElementById("email").value = "";
+        document.getElementById("msg").value = "";
+      } else {
+        alert("Error al enviar mensaje");
+      }
+    })
+    .catch(() => {
+      alert("Error de conexión");
+    });
+  }
+
+  // MODO OSCURO / CLARO
+  function toggleTheme() {
+    document.body.classList.toggle("light");
+
+    let btn = document.getElementById("themeBtn");
+
+    if (document.body.classList.contains("light")) {
+      btn.innerText = "🌞 Modo oscuro";
+      localStorage.setItem("theme", "light");
+    } else {
+      btn.innerText = "🌙 Modo claro";
+      localStorage.setItem("theme", "dark");
+    }
+  }
+
+  window.onload = function () {
+    let theme = localStorage.getItem("theme");
+
+    if (theme === "light") {
+      document.body.classList.add("light");
+      document.getElementById("themeBtn").innerText = "🌞 Modo oscuro";
+    }
+  };
+</script>
 
 </body>
 </html>
