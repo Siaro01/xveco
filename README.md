@@ -308,7 +308,9 @@ Puedes abrir un Issue o enviar un Pull Request.
 
 ## 📄 Licencia
 
-MIT License.
+Este proyecto está licenciado bajo la licencia GNU Affero General Public License v3.0 (AGPL-3.0).
+
+Esto significa que cualquier versión modificada distribuida o utilizada como servicio a través de una red debe poner a disposición su código fuente bajo la misma licencia.
 
 ---
 
