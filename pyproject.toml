@@ -1,0 +1,18 @@
+[project]
+name = "xveconomy"
+version = "2.1.5"
+description = "Librería avanzada de economía, bancos, mercados e inventarios con soporte de peso, volumen, durabilidad, podrición y contenedores."
+readme = "README.md"
+authors = [
+    { name = "AetherMC" }
+]
+license = "AGPL-3.0-or-later"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+requires-python = ">=3.8"
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/Siaro01/xveco"
