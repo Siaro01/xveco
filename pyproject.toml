@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [project]
 name = "xveconomy"
 version = "2.1.5"
@@ -16,3 +17,17 @@ dependencies = []
 
 [project.urls]
 Homepage = "https://github.com/Siaro01/xveco"
+=======
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "xveco"
+version = "1.0.1"
+description = "Librería de economía simulada con cuentas, inflación y banco"
+authors = [{name="Siaro"}]
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "MIT"}
+>>>>>>> 1529115e6df79cb08d89d77e2c12cbaa9c771b61
